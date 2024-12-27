@@ -1,18 +1,21 @@
-# Sử dụng Python 3.12 Alpine (nhẹ và tối ưu)
+# Sử dụng một hình ảnh Python chính thức làm ảnh nền
 FROM python:3.12-alpine
 
 # Đặt thư mục làm việc trong container
 WORKDIR /app
 
+# Sao chép nội dung thư mục hiện tại vào container tại /app
+COPY . /app
+
+# Cài đặt các phụ thuộc
+RUN pip install --no-cache-dir flask gunicorn
+
 # Sao chép tệp requirements.txt và cài đặt các phụ thuộc
-COPY requirements.txt .  
-RUN pip install --no-cache-dir -r requirements.txt  
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-# Sao chép toàn bộ mã nguồn vào container
-COPY . .
-
-# Mở cổng 5000 cho Flask
+# Mở cổng 5000 cho bên ngoài container
 EXPOSE 5000
 
-# Chạy ứng dụng Flask bằng Gunicorn
+# Định nghĩa lệnh để chạy ứng dụng với Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
