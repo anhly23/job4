@@ -24,5 +24,15 @@ pipeline {
                 git branch: 'main', credentialsId: 'github', url: 'https://github.com/anhly23/job4.git'
             }
         }
+        stage('Push Docker Hub'){
+            steps{
+                // This step should not normally be used in your script. Consult the inline help for details.
+                withDockerRegistry(credentialsId: 'creds-dockerhub', url:'') {
+                // some block
+                sh label:'',script: 'docker build -t anhly230722/web:latest .'
+                sh label:'',script: 'docker push anhly230722/web:latest' 
+                }
+            }
+        }
     }
 }
