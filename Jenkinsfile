@@ -30,8 +30,8 @@ pipeline {
                 withDockerRegistry(credentialsId: 'creds-dockerhub', url:'') {
                 // some block  .g4m
                     }
-                sh label:'', script: 'docker build -t anhly230722/web:latest .'
-                sh label:'', script: 'docker push anhly230722/web:latest'
+                sh label:'', script: 'docker build -t anhly230722/web:jenkins .'
+                sh label:'', script: 'docker push anhly230722/web:jenkins'
             }
         }
     }
