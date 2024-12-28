@@ -39,7 +39,7 @@ pipeline {
                     }
                 sh label:'', script: 'docker build -t anhly230722/web:jenkins .'
                 sh label:'', script: 'docker push anhly230722/web:jenkins'
-            }
+            }x
         }
     }
 }
