@@ -14,7 +14,7 @@ pipeline {
                     // some block
                     // sh label:'' ,script: 'docker build -t anhly230722/project . '
                     // sh label:'' ,script: 'docker push anhly230722/project'
-                    sh label:'' ,script: 'docker pull anhly230722/web'
+                    sh label:'' ,script: 'docker pull nginx '
                 }
             }
         }
