@@ -31,15 +31,15 @@ pipeline {
         //         }
         //     }
         // }
-        // stage('Build and Push Docker Image'){
-        //     steps{
-        //         // This step should not normally be used in your script. Consult the inline help for details.
-        //         withDockerRegistry(credentialsId: 'creds-dockerhub', url:'') {
-        //         // some block  .g4m
-        //             }
-        //         sh label:'', script: 'docker build -t anhly230722/web:jenkins .'
-        //         sh label:'', script: 'docker push anhly230722/web:jenkins'
-        //     }x
-        // }
+        stage('Build and Push Docker Image'){
+            steps{
+                // This step should not normally be used in your script. Consult the inline help for details.
+                withDockerRegistry(credentialsId: 'creds-dockerhub', url:'') {
+                // some block  .g4m
+                    }
+                sh label:'', script: 'docker build -t anhly230722/web:jenkins .'
+                sh label:'', script: 'docker push anhly230722/web:jenkins'
+            }x
+        }
     }
 }
