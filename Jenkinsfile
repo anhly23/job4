@@ -9,11 +9,11 @@ pipeline {
         }
         stage('Push'){
             steps{
-                // This step should not normally be used in your script. Consult the inline help for details.
+                    // This step should not normally be used in your script. Consult the inline help for details.
                 withDockerRegistry(credentialsId: 'creds-dockerhub1' ,url: '') {
-                // some block
-                    sh label:'' ,script: 'docker build -t anhly230722/web:latest . '
-                    sh label:'' ,script: 'docker push anhly230722/web:latest'
+                    // some block
+                    sh label:'' ,script: 'docker build -t anhly230722/project . '
+                    sh label:'' ,script: 'docker push anhly230722/project'
                 }
             }
         }
