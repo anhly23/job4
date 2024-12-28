@@ -34,6 +34,32 @@ services:
     networks:
       - webnet
 
+  # python-app:
+  #   container_name: python-flask
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #   ports:
+  #     - "5000:5000"
+
+  # ubuntu-ssh:
+  #   container_name: ssh-ubuntu
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #     target: ssh-ubuntu
+  #   ports:
+  #     - "2222:22"
+
+  # centos7-ssh:
+  #   container_name: ssh-centos7
+  #   build:
+  #     context: .
+  #     dockerfile: ./Dockerfile
+  #     target: ssh-centos7
+  #   ports:
+  #     - "2227:22"
+
 volumes:
   mysql:
 
