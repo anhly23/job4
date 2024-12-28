@@ -21,7 +21,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/anhly23/job4.git'
+                git branch: 'main', url: 'https://github.com/anhly23/job4.git'
             }
         }
         stage('Build') {
