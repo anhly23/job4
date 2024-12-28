@@ -21,7 +21,7 @@ pipeline {
     }
     post{
         always{
-            mail bcc: '', body: 'noi dung', cc: '', from: '', replyTo: '', subject: 'test jenkins', to: 'anhly2307@gmail.com'
+            mail bcc: '', body: 'Text', cc: '', from: '', replyTo: '', subject: 'test jenkins', to: 'anhly2307@gmail.com'
         }
     }
 }
